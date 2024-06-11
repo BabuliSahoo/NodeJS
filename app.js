@@ -9,7 +9,7 @@ const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(adminRoutes);
+app.use('/admin',adminRoutes);
 app.use(shopRoutes);
 
 //Handle Error with Status
@@ -22,4 +22,4 @@ app.use((req, res, next) => {
 // const server = http.createServer(app);
 // server.listen(3003);
 
-app.listen(3003);
+app.listen(3000);
