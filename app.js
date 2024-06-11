@@ -2,6 +2,7 @@
 //const routes = require('./routes');
 const express = require("express");
 const bodyParser = require("body-parser");
+const path =  require('path');
 
 const app = express();
 
@@ -14,7 +15,8 @@ app.use(shopRoutes);
 
 //Handle Error with Status
 app.use((req, res, next) => {
-  res.status(404).send("<h1>Page not ound</h1>");
+  //res.status(404).send("<h1>Page not ound</h1>");
+  res.status(404).sendFile(path.join(__dirname,'views','404.html'));
 });
 
 //console.log(routes.someText);
